@@ -1,4 +1,5 @@
 # encoding: utf-8
+from __future__ import division, print_function, unicode_literals
 
 ###########################################################################################################
 #
@@ -17,6 +18,7 @@ from GlyphsApp.plugins import *
 
 class MakeBoxes(FilterWithoutDialog):
 	
+	@objc.python_method
 	def settings(self):
 		self.menuName = Glyphs.localize({
 			'en': u'Make Boxes',
@@ -24,6 +26,7 @@ class MakeBoxes(FilterWithoutDialog):
 		})
 		self.keyboardShortcut = None # With Cmd+Shift
 
+	@objc.python_method
 	def filter(self, layer, inEditView, customParameters):
 		pathPoints = (
 			NSPoint( 0.0,         layer.master.descender ),
@@ -42,6 +45,7 @@ class MakeBoxes(FilterWithoutDialog):
 		layer.clear()
 		layer.paths.append(box)
 	
+	@objc.python_method
 	def __file__(self):
 		"""Please leave this method unchanged"""
 		return __file__
