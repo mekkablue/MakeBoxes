@@ -43,7 +43,12 @@ class MakeBoxes(FilterWithoutDialog):
 		box.closed = True
 		
 		layer.clear()
-		layer.paths.append(box)
+		try:
+			# GLYPHS 3:
+			layer.paths.append(box)
+		except:
+			# GLYPHS 2:
+			layer.shapes.append(box)
 	
 	@objc.python_method
 	def __file__(self):
