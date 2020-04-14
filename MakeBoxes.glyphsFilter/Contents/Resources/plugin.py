@@ -21,8 +21,10 @@ class MakeBoxes(FilterWithoutDialog):
 	@objc.python_method
 	def settings(self):
 		self.menuName = Glyphs.localize({
-			'en': u'Make Boxes',
-			'de': u'Kastln machen',
+			'en': 'Make Boxes',
+			'de': 'Kasteln machen',
+			'es': 'Hacer cajas',
+			'fr': 'Générer rectangles',
 		})
 		self.keyboardShortcut = None # With Cmd+Shift
 
